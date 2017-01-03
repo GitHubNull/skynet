@@ -11,9 +11,14 @@ skynet.start(function()
 		local console = skynet.newservice("console")
 	end
 	skynet.newservice("debug_console",8000)
-	local gateway = skynet.newservice("gateway")
-	skynet.call(gateway, "lua", "open", gatewayconfig.conf)
-	skynet.newservice("databaseServer")
-	skynet.newservice("chatServer")
-	skynet.exit()
+	-- local gateway = skynet.newservice("gateway")
+	if(nil ~= conf) then
+		for k, v in pairs(conf) do
+			print(k, v)
+		end
+	end
+	-- skynet.call(gateway, "lua", "open", conf)
+	-- skynet.newservice("databaseServer")
+	-- skynet.newservice("chatServer")
+	-- skynet.exit()
 end)

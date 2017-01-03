@@ -1,4 +1,5 @@
 root = "./"
+root = "./"
 thread = 8
 logger = nil
 logpath = "."
